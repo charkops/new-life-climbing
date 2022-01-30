@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	fmt.Println("Hi, climbing Greece!")
+	// What do we wanna do here ?
+	// Initialize DB
+	// Initialize routers/routes
+	// Serve
+	r := gin.Default()
+	r.Run()
 }
