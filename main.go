@@ -1,7 +1,10 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"climbing/ginengine"
+	"climbing/middleware"
+	"climbing/routers"
+	"fmt"
 )
 
 func main() {
@@ -9,6 +12,13 @@ func main() {
 	// Initialize DB
 	// Initialize routers/routes
 	// Serve
-	r := gin.Default()
-	r.Run()
+
+	// Initialize gin.Engine
+	// NOTE (@Charkops): Maybe use sync.Once to only do this once ?
+	ginengine.Setup()
+	middleware.Setup()
+	routers.Setup()
+	fmt.Println("New gin engine created")
+
+	ginengine.Engine.Run()
 }

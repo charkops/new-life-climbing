@@ -11,4 +11,6 @@ COPY . .
 
 RUN go mod download
 
-CMD ["sh"]
+RUN go build -o climbing
+
+CMD ["./climbing"]
