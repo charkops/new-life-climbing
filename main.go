@@ -1,11 +1,31 @@
 package main
 
 import (
+	"encoding/json"
+	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/contrib/renders/multitemplate"
 	"github.com/gin-gonic/gin"
 )
+
+type Sector struct {
+	Name string `json:"name"`
+}
+
+func loadDataFromJSON(filePath string) ([]*Sector, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var sectors []*Sector
+	err = json.NewDecoder(file).Decode(&sectors)
+
+	return sectors, err
+}
 
 func makeTemplates() multitemplate.Render {
 	templates := multitemplate.New()
@@ -28,6 +48,16 @@ func makeTemplates() multitemplate.Render {
 }
 
 func main() {
+
+	sectors, err := loadDataFromJSON("data.json")
+	if err != nil {
+		panic(err)
+	}
+
+	for _, v := range sectors {
+		fmt.Println(v.Name)
+	}
+
 	router := gin.Default()
 
 	// If we are developing, reload templates in each request
