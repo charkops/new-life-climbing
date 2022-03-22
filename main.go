@@ -28,20 +28,29 @@ func makeTemplates() multitemplate.Render {
 }
 
 func main() {
-	r := gin.Default()
+	router := gin.Default()
 
-	r.HTMLRender = makeTemplates()
-	r.GET("/", func(c *gin.Context) {
+	// If we are developing, reload templates in each request
+	if gin.Mode() == "debug" {
+		router.Use(func(c *gin.Context) {
+			router.HTMLRender = makeTemplates()
+		})
+	}
+
+	// Static Folder
+	router.StaticFS("/static", http.Dir("static"))
+	router.HTMLRender = makeTemplates()
+	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index", gin.H{
 			"Title": "Main website",
 		})
 	})
 
-	r.GET("/about", func(c *gin.Context) {
+	router.GET("/about", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "about", gin.H{
 			"Title": "About",
 		})
 	})
 
-	r.Run()
+	router.Run()
 }
