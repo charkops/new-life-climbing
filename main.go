@@ -1,24 +1,47 @@
 package main
 
 import (
-	"climbing/ginengine"
-	"climbing/middleware"
-	"climbing/routers"
-	"fmt"
+	"net/http"
+
+	"github.com/gin-gonic/contrib/renders/multitemplate"
+	"github.com/gin-gonic/gin"
 )
 
+func makeTemplates() multitemplate.Render {
+	templates := multitemplate.New()
+
+	templates.AddFromFiles("index",
+		"web/base.html",
+		"web/index.html",
+		"web/header.html",
+		"web/footer.html",
+	)
+
+	templates.AddFromFiles("about",
+		"web/base.html",
+		"web/about.html",
+		"web/header.html",
+		"web/footer.html",
+	)
+
+	return templates
+}
+
 func main() {
-	// What do we wanna do here ?
-	// Initialize DB
-	// Initialize routers/routes
-	// Serve
+	r := gin.Default()
 
-	// Initialize gin.Engine
-	// NOTE (@Charkops): Maybe use sync.Once to only do this once ?
-	ginengine.Setup()
-	middleware.Setup()
-	routers.Setup()
-	fmt.Println("New gin engine created")
+	r.HTMLRender = makeTemplates()
+	r.GET("/", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index", gin.H{
+			"Title": "Main website",
+		})
+	})
 
-	ginengine.Engine.Run()
+	r.GET("/about", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "about", gin.H{
+			"Title": "About",
+		})
+	})
+
+	r.Run()
 }
