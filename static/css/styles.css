@@ -16,3 +16,7 @@ iframe {
   height: 24rem;
   width: 100%;
 }
+
+img {
+  max-width: 100%;
+}

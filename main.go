@@ -11,7 +11,17 @@ import (
 )
 
 type Sector struct {
-	Name string `json:"name"`
+	Name        string  `json:"name"`
+	Description string  `json:"description"`
+	ImgUrl      string  `json:"imgUrl"`
+	Routes      []Route `json:"routes"`
+}
+
+type Route struct {
+	Name        string `json:"name"`
+	Length      string `json:"length"`
+	Grade       string `json:"grade"`
+	Description string `json:"description"`
 }
 
 func loadDataFromJSON(filePath string) ([]*Sector, error) {
@@ -72,7 +82,8 @@ func main() {
 	router.HTMLRender = makeTemplates()
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index", gin.H{
-			"Title": "Main website",
+			"Title":   "Main website",
+			"sectors": sectors,
 		})
 	})
 

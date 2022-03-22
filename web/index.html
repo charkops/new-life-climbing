@@ -2,6 +2,33 @@
 
 {{ define "content" }}
   {{ template "header" }}
-  <h2>Index page</h2>
+  <h2>Πεδία</h2>
+  {{ range $sector := .sectors }}
+    <h3>{{ $sector.Name }}</h3>
+    <p>{{ $sector.Description }}</p>
+    <img alt="A dog on an iPad" src="/static/img/{{ $sector.ImgUrl }}" />
+    {{ if $sector.Routes }}
+
+      <table>
+        <thead>
+          <tr>
+            <th>Όνομα</th>
+            <th>Μήκος</th>
+            <th>Δυσκολία</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $route := $sector.Routes }}
+            <tr>
+              <td>{{ $route.Name }}</td>
+              <td>{{ $route.Length }}</td>
+              <td>{{ $route.Grade }}</td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+
+    {{ end }}
+  {{ end }}
   {{ template "footer" }}
 {{ end }}
