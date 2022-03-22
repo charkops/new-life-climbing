@@ -47,6 +47,13 @@ func makeTemplates() multitemplate.Render {
 		"web/footer.html",
 	)
 
+	templates.AddFromFiles("sector",
+		"web/base.html",
+		"web/sector.html",
+		"web/header.html",
+		"web/footer.html",
+	)
+
 	templates.AddFromFiles("about",
 		"web/base.html",
 		"web/about.html",
@@ -86,6 +93,16 @@ func main() {
 			"sectors": sectors,
 		})
 	})
+
+	for _, v := range sectors {
+		v := v
+		router.GET(fmt.Sprintf("/sector/%v", v.Name), func(c *gin.Context) {
+			c.HTML(http.StatusOK, "sector", gin.H{
+				"Title":  v.Name,
+				"sector": v,
+			})
+		})
+	}
 
 	router.GET("/about", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "about", gin.H{
