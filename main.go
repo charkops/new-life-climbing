@@ -72,33 +72,10 @@ func makeTemplates() multitemplate.Multitemplate {
 	return templates
 }
 
-// Executes a specific template with context
-func executeTemplate(templates multitemplate.Multitemplate, name string, data interface{}) {
-	tmpl, exists := templates[name]
+func executeTemplate(templates multitemplate.Multitemplate, templateName string, outName string, data interface{}) {
+	tmpl, exists := templates[templateName]
 	if !exists {
-		fmt.Errorf("template %s doesn't exist", name)
-	}
-
-	if !strings.HasSuffix(name, ".html") {
-		name = name + ".html"
-	}
-
-	f, err := os.Create("dist/" + name)
-	defer f.Close()
-	if err != nil {
-		panic(err)
-	}
-
-	err = tmpl.Execute(f, data)
-	if err != nil {
-		panic(err)
-	}
-}
-
-func executeTemplateWithDifferentOutName(templates multitemplate.Multitemplate, name string, outName string, data interface{}) {
-	tmpl, exists := templates[name]
-	if !exists {
-		fmt.Errorf("template %s doesn't exist", name)
+		fmt.Errorf("template %s doesn't exist", templateName)
 	}
 
 	if !strings.HasSuffix(outName, ".html") {
@@ -117,16 +94,10 @@ func executeTemplateWithDifferentOutName(templates multitemplate.Multitemplate, 
 	}
 }
 
-func main() {
-
-	sectors, err := loadDataFromJSON("data.json")
-	if err != nil {
-		panic(err)
-	}
-
+func createDistFolder() {
 	// Create folder
 	os.RemoveAll("dist")
-	err = os.Mkdir("dist", 0755)
+	err := os.Mkdir("dist", 0755)
 	if err != nil {
 		panic(err)
 	}
@@ -141,9 +112,19 @@ func main() {
 		panic(err)
 	}
 	util.CopyFolder("static", "dist/static")
+}
+
+func main() {
+
+	sectors, err := loadDataFromJSON("data.json")
+	if err != nil {
+		panic(err)
+	}
+
+	createDistFolder()
 
 	templates := makeTemplates()
-	executeTemplate(templates, "index", struct {
+	executeTemplate(templates, "index", "index", struct {
 		Title   string
 		Sectors []*Sector
 	}{
@@ -151,14 +132,14 @@ func main() {
 		sectors,
 	})
 
-	executeTemplate(templates, "about", struct {
+	executeTemplate(templates, "about", "about", struct {
 		Title string
 	}{
 		"About",
 	})
 
 	for _, v := range sectors {
-		executeTemplateWithDifferentOutName(templates, "sector", "sector/"+v.Name, struct {
+		executeTemplate(templates, "sector", "sector/"+v.Name, struct {
 			Title  string
 			Sector Sector
 		}{
@@ -167,5 +148,5 @@ func main() {
 		})
 	}
 
-	executeTemplate(templates, "404", nil)
+	executeTemplate(templates, "404", "404", nil)
 }
