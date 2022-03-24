@@ -62,6 +62,13 @@ func makeTemplates() multitemplate.Multitemplate {
 		"web/footer.html",
 	)
 
+	templates.AddFromFiles("404",
+		"web/base.html",
+		"web/404.html",
+		"web/header.html",
+		"web/footer.html",
+	)
+
 	return templates
 }
 
@@ -159,4 +166,6 @@ func main() {
 			*v,
 		})
 	}
+
+	executeTemplate(templates, "404", nil)
 }
