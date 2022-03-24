@@ -1,0 +1,22 @@
+
+nav {
+  padding: 2rem 0;
+}
+
+nav > a {
+  margin: 0 3rem;
+}
+
+footer {
+  position: sticky;
+  top: 100vh;
+}
+
+iframe {
+  height: 24rem;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
