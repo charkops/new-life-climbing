@@ -3,7 +3,7 @@
 {{ define "content" }}
   {{ template "header" }}
   <h2>Πεδία</h2>
-  {{ range $sector := .sectors }}
+  {{ range $sector := .Sectors }}
     <h3><a href="/sector/{{ $sector.Name }}">{{ $sector.Name }}</a></h3>
     <p>{{ $sector.Description }}</p>
     <a href="/sector/{{ $sector.Name }}"><img alt="A dog on an iPad" src="/static/img/{{ $sector.ImgUrl }}" /></a>

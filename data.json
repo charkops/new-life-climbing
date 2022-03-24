@@ -3,6 +3,7 @@
     "name": "Το Ρέμα",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!",
     "imgUrl": "sample_mountain.jpg",
+    "slug": "to_rema",
     "routes": [
       { "name": "Δίδυμη 1", "length": "30m", "grade": "6b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
       { "name": "Δίδυμη 2", "length": "32m", "grade": "7b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
@@ -13,6 +14,7 @@
     "name": "Τρύπιος Βράχος",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!",
     "imgUrl": "sample_mountain.jpg",
+    "slug": "trypios_braxos",
     "routes": [
       { "name": "Δίδυμη 1", "length": "30m", "grade": "6b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
       { "name": "Δίδυμη 2", "length": "32m", "grade": "7b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
@@ -23,6 +25,7 @@
     "name": "Μορντορ",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!",
     "imgUrl": "sample_mountain.jpg",
+    "slug": "mordor",
     "routes": [
       { "name": "Δίδυμη 1", "length": "30m", "grade": "6b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
       { "name": "Δίδυμη 2", "length": "32m", "grade": "7b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },

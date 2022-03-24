@@ -1,19 +1,19 @@
 package main
 
 import (
+	"climbing/multitemplate"
+	"climbing/util"
 	"encoding/json"
 	"fmt"
-	"net/http"
 	"os"
-
-	"github.com/gin-gonic/contrib/renders/multitemplate"
-	"github.com/gin-gonic/gin"
+	"strings"
 )
 
 type Sector struct {
 	Name        string  `json:"name"`
 	Description string  `json:"description"`
 	ImgUrl      string  `json:"imgUrl"`
+	Slug        string  `json:"slug"`
 	Routes      []Route `json:"routes"`
 }
 
@@ -37,7 +37,8 @@ func loadDataFromJSON(filePath string) ([]*Sector, error) {
 	return sectors, err
 }
 
-func makeTemplates() multitemplate.Render {
+// Creates the templates from files
+func makeTemplates() multitemplate.Multitemplate {
 	templates := multitemplate.New()
 
 	templates.AddFromFiles("index",
@@ -64,6 +65,51 @@ func makeTemplates() multitemplate.Render {
 	return templates
 }
 
+// Executes a specific template with context
+func executeTemplate(templates multitemplate.Multitemplate, name string, data interface{}) {
+	tmpl, exists := templates[name]
+	if !exists {
+		fmt.Errorf("template %s doesn't exist", name)
+	}
+
+	if !strings.HasSuffix(name, ".html") {
+		name = name + ".html"
+	}
+
+	f, err := os.Create("dist/" + name)
+	defer f.Close()
+	if err != nil {
+		panic(err)
+	}
+
+	err = tmpl.Execute(f, data)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func executeTemplateWithDifferentOutName(templates multitemplate.Multitemplate, name string, outName string, data interface{}) {
+	tmpl, exists := templates[name]
+	if !exists {
+		fmt.Errorf("template %s doesn't exist", name)
+	}
+
+	if !strings.HasSuffix(outName, ".html") {
+		outName = outName + ".html"
+	}
+
+	f, err := os.Create("dist/" + outName)
+	defer f.Close()
+	if err != nil {
+		panic(err)
+	}
+
+	err = tmpl.Execute(f, data)
+	if err != nil {
+		panic(err)
+	}
+}
+
 func main() {
 
 	sectors, err := loadDataFromJSON("data.json")
@@ -71,44 +117,42 @@ func main() {
 		panic(err)
 	}
 
-	for _, v := range sectors {
-		fmt.Println(v.Name)
+	// Create folder
+	os.RemoveAll("dist")
+	err = os.Mkdir("dist", 0755)
+	if err != nil {
+		panic(err)
 	}
 
-	router := gin.Default()
-
-	// If we are developing, reload templates in each request
-	if gin.Mode() == "debug" {
-		router.Use(func(c *gin.Context) {
-			router.HTMLRender = makeTemplates()
-		})
+	err = os.Mkdir("dist/static", 0755)
+	if err != nil {
+		panic(err)
 	}
+	util.CopyFolder("static", "dist/static")
 
-	// Static Folder
-	router.StaticFS("/static", http.Dir("static"))
-	router.HTMLRender = makeTemplates()
-	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index", gin.H{
-			"Title":   "Main website",
-			"sectors": sectors,
-		})
+	templates := makeTemplates()
+	executeTemplate(templates, "index", struct {
+		Title   string
+		Sectors []*Sector
+	}{
+		"Index",
+		sectors,
 	})
 
-	for _, v := range sectors {
-		v := v
-		router.GET(fmt.Sprintf("/sector/%v", v.Name), func(c *gin.Context) {
-			c.HTML(http.StatusOK, "sector", gin.H{
-				"Title":  v.Name,
-				"sector": v,
-			})
-		})
-	}
-
-	router.GET("/about", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "about", gin.H{
-			"Title": "About",
-		})
+	executeTemplate(templates, "about", struct {
+		Title string
+	}{
+		"About",
 	})
 
-	router.Run()
+	for i := 0; i < len(sectors); i++ {
+
+		executeTemplateWithDifferentOutName(templates, "sector", "sector_"+sectors[i].Slug, struct {
+			Title  string
+			Sector Sector
+		}{
+			sectors[i].Name,
+			*sectors[i],
+		})
+	}
 }
