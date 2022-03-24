@@ -124,6 +124,11 @@ func main() {
 		panic(err)
 	}
 
+	err = os.Mkdir("dist/sector", 0755)
+	if err != nil {
+		panic(err)
+	}
+
 	err = os.Mkdir("dist/static", 0755)
 	if err != nil {
 		panic(err)
@@ -145,14 +150,13 @@ func main() {
 		"About",
 	})
 
-	for i := 0; i < len(sectors); i++ {
-
-		executeTemplateWithDifferentOutName(templates, "sector", "sector_"+sectors[i].Slug, struct {
+	for _, v := range sectors {
+		executeTemplateWithDifferentOutName(templates, "sector", "sector/"+v.Name, struct {
 			Title  string
 			Sector Sector
 		}{
-			sectors[i].Name,
-			*sectors[i],
+			v.Name,
+			*v,
 		})
 	}
 }
