@@ -11,6 +11,23 @@
   <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="/">Αρχική</a>
+      <a href="/about">Πληροφορίες</a>
+    </nav>
+    <h1>Αναρριχητικό πεδίο "Νέα Ζωή"</h1>
+    <p>{{ .Data.TotalSectors }} Πεδία - {{ .Data.TotalRoutes }} Διαδρομές</p>
+  </header>
+  <!-- /Header -->
+
   {{ template "content" . }}
+
+  <!-- Footer -->
+  <footer>
+    <p>Built with <a href="https://simplecss.org/">SimpleCSS</a> + <a href="https://github.com/golang/go">Go</a> by <a href="https://github.com/charkops">Haris Kopsacheilis</a></p>
+  </footer>
+  <!-- /Footer -->
 </body>
 </html>

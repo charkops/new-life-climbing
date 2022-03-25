@@ -1,8 +1,6 @@
 
 
 {{ define "content" }}
-  {{ template "header" }}
-
   <h2>{{ .Sector.Name }}</h2>
   <p>{{ .Sector.Description }}</p>
     <img alt="{{ .Sector.Name }}" src="/static/img/{{ .Sector.ImgUrl }}" />
@@ -30,6 +28,4 @@
         </tbody>
       </table>
     {{ end }}
-
-  {{ template "footer" }}
 {{ end }}
