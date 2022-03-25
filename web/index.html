@@ -6,29 +6,29 @@
   {{ range $sector := .Sectors }}
     <h3><a href="/sector/{{ $sector.Name }}">{{ $sector.Name }}</a></h3>
     <p>{{ $sector.Description }}</p>
-    <a href="/sector/{{ $sector.Name }}"><img alt="A dog on an iPad" src="/static/img/{{ $sector.ImgUrl }}" /></a>
-    {{ if $sector.Routes }}
+    <a href="/sector/{{ $sector.Name }}"><img alt="{{ $sector.Name }}" src="/static/img/{{ $sector.ImgUrl }}" /></a>
+    <!-- {{ if $sector.Routes }}
 
       <table>
         <thead>
           <tr>
             <th>Όνομα</th>
-            <th>Μήκος</th>
             <th>Δυσκολία</th>
+            <th>Σετάκια</th>
           </tr>
         </thead>
         <tbody>
           {{ range $route := $sector.Routes }}
             <tr>
               <td>{{ $route.Name }}</td>
-              <td>{{ $route.Length }}</td>
               <td>{{ $route.Grade }}</td>
+              <td>{{ $route.Quickdraws }}</td>
             </tr>
           {{ end }}
         </tbody>
       </table>
 
-    {{ end }}
+    {{ end }} -->
   {{ end }}
   {{ template "footer" }}
 {{ end }}

@@ -5,23 +5,23 @@
 
   <h2>{{ .Sector.Name }}</h2>
   <p>{{ .Sector.Description }}</p>
-    <img alt="A dog on an iPad" src="/static/img/{{ .Sector.ImgUrl }}" />
+    <img alt="{{ .Sector.Name }}" src="/static/img/{{ .Sector.ImgUrl }}" />
     {{ if .Sector.Routes }}
 
       <table>
         <thead>
           <tr>
             <th>Όνομα</th>
-            <th>Μήκος</th>
             <th>Δυσκολία</th>
+            <th>Σετάκια</th>
           </tr>
         </thead>
         <tbody>
           {{ range $route := .Sector.Routes }}
             <tr>
               <td>{{ $route.Name }}</td>
-              <td>{{ $route.Length }}</td>
               <td>{{ $route.Grade }}</td>
+              <td>{{ $route.Quickdraws }}</td>
             </tr>
             <tr>
               <td colspan="3">{{ $route.Description }}</td>
