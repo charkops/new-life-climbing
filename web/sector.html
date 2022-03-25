@@ -3,29 +3,32 @@
 {{ define "content" }}
   <h2>{{ .Sector.Name }}</h2>
   <p>{{ .Sector.Description }}</p>
-    <img alt="{{ .Sector.Name }}" src="/static/img/{{ .Sector.ImgUrl }}" />
-    {{ if .Sector.Routes }}
+  <img alt="{{ .Sector.Name }}" src="/static/img/{{ .Sector.ImgUrl }}" />
+  {{ if .Sector.Routes }}
 
-      <table>
-        <thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Όνομα</th>
+          <th>Δυσκολία</th>
+          <th>Σετάκια</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range $route := .Sector.Routes }}
           <tr>
-            <th>Όνομα</th>
-            <th>Δυσκολία</th>
-            <th>Σετάκια</th>
+            <td>{{ $route.Name }}</td>
+            <td>{{ $route.Grade }}</td>
+            <td>{{ $route.Quickdraws }}</td>
           </tr>
-        </thead>
-        <tbody>
-          {{ range $route := .Sector.Routes }}
-            <tr>
-              <td>{{ $route.Name }}</td>
-              <td>{{ $route.Grade }}</td>
-              <td>{{ $route.Quickdraws }}</td>
-            </tr>
-            <tr>
-              <td colspan="3">{{ $route.Description }}</td>
-            </tr>
-          {{ end }}
-        </tbody>
-      </table>
-    {{ end }}
+          <tr>
+            <td colspan="3">{{ $route.Description }}</td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  {{ end }}
+
+  <h3>Οδηγίες πρόσβασης</h3>
+  <p>{{ .Sector.Info }}</p>
 {{ end }}
