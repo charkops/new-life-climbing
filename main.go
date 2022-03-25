@@ -49,29 +49,21 @@ func makeTemplates() multitemplate.Multitemplate {
 	templates.AddFromFiles("index",
 		"web/base.html",
 		"web/index.html",
-		"web/header.html",
-		"web/footer.html",
 	)
 
 	templates.AddFromFiles("sector",
 		"web/base.html",
 		"web/sector.html",
-		"web/header.html",
-		"web/footer.html",
 	)
 
 	templates.AddFromFiles("about",
 		"web/base.html",
 		"web/about.html",
-		"web/header.html",
-		"web/footer.html",
 	)
 
 	templates.AddFromFiles("404",
 		"web/base.html",
 		"web/404.html",
-		"web/header.html",
-		"web/footer.html",
 	)
 
 	return templates
@@ -171,5 +163,11 @@ func main() {
 		})
 	}
 
-	executeTemplate(templates, "404", "404", nil)
+	executeTemplate(templates, "404", "404", struct {
+		Title string
+		Data  HeaderData
+	}{
+		"404 | Νέα Ζωή",
+		headerData,
+	})
 }

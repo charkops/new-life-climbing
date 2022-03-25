@@ -1,7 +1,6 @@
 
 
 {{ define "content" }}
-  {{ template "header" }}
   <h2>Πεδία</h2>
   {{ range $sector := .Sectors }}
     <h3><a href="/sector/{{ $sector.Name }}">{{ $sector.Name }}</a></h3>
@@ -30,5 +29,4 @@
 
     {{ end }} -->
   {{ end }}
-  {{ template "footer" }}
 {{ end }}
