@@ -5,7 +5,7 @@
 
   <h2>{{ .Sector.Name }}</h2>
   <p>{{ .Sector.Description }}</p>
-    <img alt="A dog on an iPad" src="/static/img/{{ .Sector.ImgUrl }}" />
+    <img alt="{{ .Sector.Name }}" src="/static/img/{{ .Sector.ImgUrl }}" />
     {{ if .Sector.Routes }}
 
       <table>

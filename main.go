@@ -133,14 +133,14 @@ func main() {
 		Title   string
 		Sectors []*Sector
 	}{
-		"Index",
+		"Αρχική | Νέα Ζωή",
 		sectors,
 	})
 
 	executeTemplate(templates, "about", "about", struct {
 		Title string
 	}{
-		"About",
+		"Πληροφορίες | Νέα Ζωή",
 	})
 
 	for _, v := range sectors {
@@ -148,7 +148,7 @@ func main() {
 			Title  string
 			Sector Sector
 		}{
-			v.Name,
+			v.Name + " | Νέα Ζωή",
 			*v,
 		})
 	}
