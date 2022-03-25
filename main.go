@@ -164,8 +164,10 @@ func main() {
 	}
 
 	executeTemplate(templates, "404", "404", struct {
-		Data HeaderData
+		Title string
+		Data  HeaderData
 	}{
+		"404 | Νέα Ζωή",
 		headerData,
 	})
 }
