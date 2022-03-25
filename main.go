@@ -163,5 +163,9 @@ func main() {
 		})
 	}
 
-	executeTemplate(templates, "404", "404", nil)
+	executeTemplate(templates, "404", "404", struct {
+		Data HeaderData
+	}{
+		headerData,
+	})
 }
