@@ -128,28 +128,46 @@ func main() {
 
 	createDistFolder()
 
+	type HeaderData struct {
+		TotalSectors int
+		TotalRoutes  int
+	}
+
+	totalRoutes := 0
+	for _, s := range sectors {
+		totalRoutes += len(s.Routes)
+	}
+
+	// To be passed to every template
+	headerData := HeaderData{len(sectors), totalRoutes}
 	templates := makeTemplates()
 	executeTemplate(templates, "index", "index", struct {
 		Title   string
 		Sectors []*Sector
+		Data    HeaderData
 	}{
 		"Αρχική | Νέα Ζωή",
 		sectors,
+		headerData,
 	})
 
 	executeTemplate(templates, "about", "about", struct {
 		Title string
+		Data  HeaderData
 	}{
 		"Πληροφορίες | Νέα Ζωή",
+		headerData,
 	})
 
 	for _, v := range sectors {
 		executeTemplate(templates, "sector", "sector/"+v.Name, struct {
 			Title  string
 			Sector Sector
+			Data   HeaderData
 		}{
 			v.Name + " | Νέα Ζωή",
 			*v,
+			headerData,
 		})
 	}
 
