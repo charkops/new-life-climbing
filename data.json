@@ -1,35 +1,283 @@
 [
   {
     "name": "Το Ρέμα",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!",
-    "imgUrl": "sample_mountain.jpg",
-    "slug": "to_rema",
+    "description": "Δίπλα στο ποτάμι. Το σκαρφάλωμα στο πεδίο είναι απολαυστικό μέχρι τις 13:00 και μετά τις 18:00 το καλοκαίρι. Το χειμώνα το απολαμβάνουμε όλη μέρα.",
+    "info": "Στην επαρχιακή οδό Σκύδρας-Αριδαίας , ακριβώς πριν φτάσουμε στο χωριό Νέα Ζωή στρίβουμε δεξιά σε χωματόδρομο ( πριν το καφέ \"Νέα ζωή στη γεύση\". Ακολουθούμε τον χωματόδρομο για 395 μέτρα. Παρκάρουμε στο άνοιγμα , ακολουθούμε το μονοπάτι στα ανατολικά και σε 4 λεπτά αφού περάσουμε το ρέμα φτάνουμε στο πεδίο. (Στον γυρισμό στην έξοδο από τον χωματόδρομο, επειδή δεν υπάρχει ορατότητα στην στροφή προτείνεται η στροφή δεξιά και αναστροφή στο καφενείο για αποφυγή ατυχήματος).",
+    "lon": 22.106780111789707,
+    "lat": 40.847125283359645,
     "routes": [
-      { "name": "Δίδυμη 1", "length": "30m", "grade": "6b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
-      { "name": "Δίδυμη 2", "length": "32m", "grade": "7b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
-      { "name": "Δίδυμη 3", "length": "33m", "grade": "8b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" }
-    ]
+      {
+        "name": "ΩΝΑΣΟΥ...",
+        "grade": "6c",
+        "description": "Καλά πιασίματα στη αρχή, ενώ κάπου στη μέση βρίσκεται το κρουξ ακολουθώντας μια γλυκιά άρνηση. ",
+        "openedBy": "Chico",
+        "quickdraws": 6
+      },
+      {
+        "name": "ΖΑΒΑΡΑΚΑΤΡΑΝΕΜΙΑ",
+        "grade": "6b+",
+        "description": "Σε μια ελαφριά άρνηση, η διαδρομή είναι απολαυστική σε όλο της το μήκος με χούφτες και καλά πιασίματα.",
+        "openedBy": "Γιούρι",
+        "quickdraws": 9
+      },
+      {
+        "name": "ΤΖΕΝΗ",
+        "grade": "7c ???",
+        "description": "",
+        "openedBy": "Chico",
+        "quickdraws": 14
+      },
+      {
+        "name": "ΓΑΡΓΑΝΤΟΥΑΣ",
+        "grade": "7c+ ?",
+        "description": "Η μεγαλύτερη διαδρομή του πεδίου, πυκνοασφαλισμένη, με ανάπτυγμα στα 35 μετρά.",
+        "openedBy": "Γιούρι",
+        "quickdraws": 18
+      },
+      {
+        "name": "ΜΑΜΟΥΓΚΑΣ",
+        "grade": "6b+",
+        "description": "Λίγο απαιτητική για τους κοντούς, άλλα απολαυστική.",
+        "openedBy": "Γιούρι",
+        "quickdraws": 6
+      },
+      {
+        "name": "SKYHOOK",
+        "grade": "6b",
+        "description": "Κοινό ρελέ με τον μαμούγκα.",
+        "openedBy": "Chico",
+        "quickdraws": 6
+      },
+      {
+        "name": "ΧΕΣΤ-ΚΕΣΣΣΣΣΣ???",
+        "grade": "6c+",
+        "description": "Σε κοινή αρχή με τον μαμούγκα, κινείται προς τα αριστερά.",
+        "openedBy": "Chico",
+        "quickdraws": 6
+      },
+      {
+        "name": "ΔΙΔΥΜΗ 1",
+        "grade": "6α+",
+        "description": "Από τις πρώτες διαδρομές του πεδίου.",
+        "openedBy": "",
+        "quickdraws": 5
+      },
+      {
+        "name": "ΔΙΔΥΜΗ 2",
+        "grade": "6a",
+        "description": "Από τις πρώτες διαδρομές του πεδίου.",
+        "openedBy": "",
+        "quickdraws": 5
+      },
+      {
+        "name": "ΨΑΧΝΟΝΤΑΣ ΤΟ ΜΕΛΙ",
+        "grade": "7a",
+        "description": "Ακουλουθεί την σχισμή, διέρχεται από την καμινάδα-τρύπα και βγαίνει από αριστερά. Πυκνή ασφάλιση στο crux. Μακρύ σετάκι στο πατάρι.",
+        "openedBy": "Τζοβανι Πιετρ ",
+        "quickdraws": 13
+      },
+      {
+        "name": "Lightάκι",
+        "grade": "6a",
+        "description": "",
+        "openedBy": "gi_JO",
+        "quickdraws": 5
+      },
+      {
+        "name": "ΑΞΑΣ",
+        "grade": "6c",
+        "description": "Μεταχειριστείτε με ευλάβεια το μυτίκι/μπλόκι στο πατάρι πριν το ρελέ.",
+        "openedBy": "Γιούρι",
+        "quickdraws": 11
+      },
+      {
+        "name": "FREDDIE",
+        "grade": "7a+",
+        "description": "Προσοχή στα 6-7 πρώτα μέτρα είναι αρκετά σαθρός ο βράχος.",
+        "openedBy": "Γιούρι",
+        "quickdraws": 12
+      }
+    ],
+    "_id": {
+      "$oid": "607f2746763256001a4c39cf"
+    }
   },
   {
     "name": "Τρύπιος Βράχος",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!",
-    "imgUrl": "sample_mountain.jpg",
-    "slug": "trypios_braxos",
+    "description": "Λένε πως η Ολυμπιάδα πέρασε από τον βράχο και μετά μπόρεσε να γεννήσει τον Μέγα Αλέξανδρο. Εμείς δεν γνωρίζουμε τι έκανε και τι δεν έκανε η Ολυμπιάδα με τον Φίλλιπο, και αν τους βοήθησε τελικά ο βράχος. Βοηθάει σιγουρά εμάς που τον τρυπάμε, να σκαρφαλώνουμε και να περνάμε όμορφα. Το σκαρφάλωμα στο πεδίο είναι απολαυστικό μέχρι τις 13:00 και μετά τις 18:00 το καλοκαίρι. Το χειμώνα το απολαμβάνουμε όλη μερα.",
+    "info": "Στην επαρχιακή οδό Σκύδρας-Αριδαίας  1 χιλιόμετρο πριν φτάσουμε στο χωριό Νέα Ζωή, στρίβουμε δεξιά στο λατομείο όπου υπάρχει και ταμπέλα \"Τρύπιος Βράχος\" και περνώντας από τα δεξιά του λατομείου ανηφορίζουμε για το πεδίο.",
+    "lon": 22.11330056190491,
+    "lat": 40.84451444607319,
     "routes": [
-      { "name": "Δίδυμη 1", "length": "30m", "grade": "6b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
-      { "name": "Δίδυμη 2", "length": "32m", "grade": "7b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
-      { "name": "Δίδυμη 3", "length": "33m", "grade": "8b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" }
-    ]
+      {
+        "name": "ΟΛΥΜΠΙΕΣ ΤΡΎΠΕΣ",
+        "grade": "6b+ - 6c ??",
+        "description": "Τραβερσαριστό σκαρφάλωμα και έπειτα κάθετη ανάβαση στις τρύπες.",
+        "openedBy": "Φασούλας",
+        "quickdraws": 10
+      },
+      {
+        "name": "ΣΚΟΡΠΙΟΣ",
+        "grade": "6b",
+        "description": "",
+        "openedBy": "",
+        "quickdraws": 9
+      },
+      {
+        "name": "ΣΤΗΝ ΥΓΕΙΑ ΜΑΣ",
+        "grade": "5a",
+        "description": "",
+        "openedBy": "undefined",
+        "quickdraws": 8
+      },
+      {
+        "name": "Kabamaru",
+        "grade": "7a",
+        "description": "Τρώω τα μακαρόνια σαν τον Κabamaru",
+        "openedBy": "Τζοβάνι- gi_JO",
+        "quickdraws": 9
+      },
+      {
+        "name": "ΠΡΩΤΟΜΑΓΙΑ",
+        "grade": "6c+",
+        "description": "Διέρχεται από το ρελέ του σκορπιού και συνεχίζει προς τα πάνω. (Μακρύ σετάκι στο ρελέ)",
+        "openedBy": "Αξας ",
+        "quickdraws": 10
+      },
+      {
+        "name": "ΤΟ ΔΕΝΤΡΟ",
+        "grade": "6a",
+        "description": "",
+        "openedBy": "undefined",
+        "quickdraws": 8
+      },
+      {
+        "name": "FREE SOLO",
+        "grade": "5a",
+        "description": "",
+        "openedBy": "undefined",
+        "quickdraws": 7
+      },
+      {
+        "name": "ΑΡΓΑΛΕΙΟ",
+        "grade": "5a",
+        "description": "",
+        "openedBy": "undefined",
+        "quickdraws": 7
+      },
+      {
+        "name": "ΜΙΣΕΣ ΔΟΥΛΕΙΕΣ",
+        "grade": "5b",
+        "description": "",
+        "openedBy": "Αξας ",
+        "quickdraws": 9
+      },
+      {
+        "name": "ΤΟ ΠΟΥΛΙ ΤΟ ΜΠΛΕ",
+        "grade": "6α+",
+        "description": "",
+        "openedBy": "Γιούρι",
+        "quickdraws": 9
+      },
+      {
+        "name": "ΣΥΛΛΟΓΊΣΟΥ ",
+        "grade": "5b",
+        "description": "",
+        "openedBy": "Γουμπ",
+        "quickdraws": 7
+      },
+      {
+        "name": "ΚΥΡΑ 'ΛΕΝΗ",
+        "grade": "7b+ ??",
+        "description": "Η κυρα ΄λένη που μας έψηνε καφεδάκια στην αυλή πριν πάμε τρυπήσουμε στο πεδίο. Δύσκολη αρχή με πυκνή ασφάλιση, το κρουξ στην 'έξοδο από το πατάρι.",
+        "openedBy": "Γιούρι-Αξάς",
+        "quickdraws": 14
+      }
+    ],
+    "_id": {
+      "$oid": "60798a20e487dc0a9002860c"
+    }
   },
   {
-    "name": "Μορντορ",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!",
-    "imgUrl": "sample_mountain.jpg",
-    "slug": "mordor",
+    "name": "Middle Earth",
+    "description": "Το σκαρφάλωμα στο πεδίο είναι απολαυστικό μέχρι τις 13:00 και μετά τις 18:00 το καλοκαίρι. Το χειμώνα το απολαμβάνουμε όλη μέρα.",
+    "info": "Στην επαρχιακή οδό Σκύδρας-Αριδαίας , 1 χιλιόμετρο πριν φτάσουμε στο χωριό Νέα Ζωή, στρίβουμε δεξιά στο λατομείο όπου υπάρχει και ταμπέλα \" Τρύπιος Βράχος\" και περνώντας από τα δεξιά του λατομείου ανηφορίζουμε για το πεδίο. Παίρνουμε το μονοπάτι στα δυτικά και σε 5 λεπτά φτάνουμε στο πεδίο.",
+    "lon": 22.113021612167362,
+    "lat": 40.845388456485686,
     "routes": [
-      { "name": "Δίδυμη 1", "length": "30m", "grade": "6b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
-      { "name": "Δίδυμη 2", "length": "32m", "grade": "7b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" },
-      { "name": "Δίδυμη 3", "length": "33m", "grade": "8b+", "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facere fugit totam nihil laborum voluptas eius repellendus distinctio expedita dolores enim, quisquam nesciunt quae voluptate impedit quod alias temporibus libero!" }
-    ]
+      {
+        "name": "ΜΟΡΤΗΣ",
+        "grade": "6b+",
+        "description": "Θετικό σκαρφάλωμα στην αρχή με αρκετές χούφτες και κάθετο στο τέλος.",
+        "openedBy": "Μαύρη Λαίλαπα",
+        "quickdraws": 11
+      },
+      {
+        "name": "OLD SCHOOL",
+        "grade": "6a",
+        "description": "Η πιο παλιά διαδρομή του πεδίου ανανεωμένη με καινούργιες πλακέτες (προτείνεται για ψηλούς)",
+        "openedBy": "",
+        "quickdraws": 9
+      },
+      {
+        "name": "ΜΠΡΑΒΟ ΖΟΥΖΟΥΝΙ",
+        "grade": "5c",
+        "description": "",
+        "openedBy": "Γουμπ",
+        "quickdraws": 6
+      },
+      {
+        "name": "ΤΟ ΠΑΓΩΤΟ",
+        "grade": "6b+",
+        "description": "",
+        "openedBy": "undefined",
+        "quickdraws": 10
+      },
+      {
+        "name": "ΠΤΏΣΗ ΤΩΝ ΒΡΆΧΩΝ",
+        "grade": "5b",
+        "description": "",
+        "openedBy": "undefined",
+        "quickdraws": 6
+      },
+      {
+        "name": "Το έδια τ' Αλογο",
+        "grade": "6b+",
+        "description": "Δούλεψε footwork ή πάρε μπλοκ",
+        "openedBy": "Μήτσος Σισσισο",
+        "quickdraws": 10
+      },
+      {
+        "name": "ΜΥΥΥΚΟΙΤΑΣ",
+        "grade": "6b?",
+        "description": "",
+        "openedBy": " Τζοβάνι Πιετρ",
+        "quickdraws": 10
+      },
+      {
+        "name": "ΩΡΑΙΑ ΚΑΡΦΩΜΕΝΗ",
+        "grade": "5c",
+        "description": "",
+        "openedBy": "undefined",
+        "quickdraws": 10
+      },
+      {
+        "name": "Ν.ΧΡΥΣΑΝΙΔΗΣ",
+        "grade": "5a",
+        "description": "",
+        "openedBy": "undefined",
+        "quickdraws": 9
+      },
+      {
+        "name": "ΕΡΓΟΣΗΜΟ ",
+        "grade": "6c+ ?",
+        "description": "Ισορροπιστικές κινήσεις αρχικά, crux με απαιτητικό footwork στο κενό.Κοινό ρελέ με το ΜΟΡΤΗ. ",
+        "openedBy": "Τζοβανι Πιετρ ",
+        "quickdraws": 12
+      }
+    ],
+    "_id": {
+      "$oid": "60798d664971cc3ae4946e94"
+    }
   }
 ]

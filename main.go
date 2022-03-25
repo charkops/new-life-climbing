@@ -12,16 +12,21 @@ import (
 type Sector struct {
 	Name        string  `json:"name"`
 	Description string  `json:"description"`
+	Info        string  `json:"info"`
+	Lon         float64 `json:"lon"`
+	Lat         float64 `json:"lat"`
 	ImgUrl      string  `json:"imgUrl"`
 	Slug        string  `json:"slug"`
 	Routes      []Route `json:"routes"`
 }
 
 type Route struct {
-	Name        string `json:"name"`
-	Length      string `json:"length"`
+	Name string `json:"name"`
+	// Length      string `json:"length"`
 	Grade       string `json:"grade"`
 	Description string `json:"description"`
+	OpenedBy    string `json:"openedBy"`
+	Quickdraws  int    `json:"quickdraws"`
 }
 
 func loadDataFromJSON(filePath string) ([]*Sector, error) {
