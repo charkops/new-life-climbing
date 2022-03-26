@@ -10,16 +10,16 @@
       <thead>
         <tr>
           <th>Όνομα</th>
-          <th>Δυσκολία</th>
-          <th>Σετάκια</th>
+          <th class="text-center">Δυσκολία</th>
+          <th class="text-center">Σετάκια</th>
         </tr>
       </thead>
       <tbody>
         {{ range $route := .Sector.Routes }}
           <tr>
-            <td>{{ $route.Name }}</td>
-            <td>{{ $route.Grade }}</td>
-            <td>{{ $route.Quickdraws }}</td>
+            <td><strong>{{ $route.Name }}</strong></td>
+            <td class="text-center">{{ $route.Grade }}</td>
+            <td class="text-center">{{ $route.Quickdraws }}</td>
           </tr>
           <tr>
             <td colspan="3">{{ $route.Description }}</td>
