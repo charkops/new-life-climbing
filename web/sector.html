@@ -3,7 +3,7 @@
 {{ define "content" }}
   <h2>{{ .Sector.Name }}</h2>
   <p>{{ .Sector.Description }}</p>
-  <img alt="{{ .Sector.Name }}" src="/static/img/{{ .Sector.ImgUrl }}" />
+  <img alt="{{ .Sector.Name }}" src="/static/img/{{ .Sector.ImgUrl }}" loading="lazy" />
   {{ if .Sector.Routes }}
 
     <table>

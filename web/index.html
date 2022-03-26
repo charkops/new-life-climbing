@@ -5,7 +5,7 @@
   {{ range $sector := .Sectors }}
     <h3><a href="/sector/{{ $sector.Name }}">{{ $sector.Name }}</a></h3>
     <p>{{ $sector.Description }}</p>
-    <a href="/sector/{{ $sector.Name }}"><img alt="{{ $sector.Name }}" src="/static/img/{{ $sector.ImgUrl }}" /></a>
+    <a href="/sector/{{ $sector.Name }}"><img alt="{{ $sector.Name }}" src="/static/img/{{ $sector.ImgUrl }}" loading="lazy" /></a>
     <!-- {{ if $sector.Routes }}
 
       <table>
