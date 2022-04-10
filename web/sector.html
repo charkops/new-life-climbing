@@ -22,7 +22,13 @@
             <td class="text-center">{{ $route.Quickdraws }}</td>
           </tr>
           <tr>
-            <td colspan="3">{{ $route.Description }}</td>
+            <td colspan="3">
+              {{ $route.Description }}
+              {{ if $route.OpenedBy }}
+                <br>
+                <span class="openedby">- Ανοίχτηκε από: <i>{{ $route.OpenedBy }}</i></span>
+              {{ end }}
+            </td>
           </tr>
         {{ end }}
       </tbody>
