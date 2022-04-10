@@ -36,3 +36,7 @@ img {
 .text-center {
   text-align: center;
 }
+
+.openedby {
+  font-size: 1rem;
+}
