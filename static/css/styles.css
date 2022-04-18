@@ -40,3 +40,26 @@ img {
 .openedby {
   font-size: 1rem;
 }
+
+/* Notice */
+.notice {
+  border: 2px solid var(--border);
+  padding: 1rem;
+}
+
+@media (prefers-color-scheme: light) {
+  .notice {
+    background-color: #ddd;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .notice {
+    background-color: #191919;
+  }
+}
+
+/* /Notice */
+.mt-3 {
+  margin-top: 30px;
+}
