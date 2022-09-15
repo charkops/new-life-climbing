@@ -7,3 +7,6 @@ gin-bin
 
 # IDE Specific
 .vscode
+
+# Local Netlify folder
+.netlify
